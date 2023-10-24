@@ -15,6 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 title: Libstake Developer
 email: libstake@hotmail.com
+name: libstake
 description: >- # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
@@ -22,6 +23,9 @@ description: >- # this means to ignore newlines until "baseurl:"
 github_username: libstake
 minimal_mistakes_skin: dark
 search: true
+
+# Format
+date_format: "%Y-%m-%d"
 
 # Build settings
 markdown: kramdown
@@ -62,8 +66,17 @@ author:
   bio    : "My awesome biography constrained to a sentence or two goes here."
   links:
     - label: "Résumé"
-      icon: "fas fa-fw fa-link"
+      icon: "far fa-file"
       url: "https://path_to_cv.com"
+    - label: "Portfolio (EN)"
+      icon: "fas fa-list"
+      url: "https://path_to_cv.com"
+    # - label: "이력서"
+    #   icon: "far fa-file"
+    #   url: "https://path_to_cv.com"
+    # - label: "포트폴리오"
+    #   icon: "fas fa-list"
+    #   url: "https://path_to_cv.com"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/LibStake"
@@ -84,8 +97,10 @@ defaults:
       author_profile: true
       read_time: true
       comments: true
-      share: true
+      share: false
       related: true
+      show_date: true
+
   # _pages
   - scope:
       path: "_pages"
@@ -100,3 +115,11 @@ category_archive:
 tag_archive:
   type: liquid
   path: /tags/
+
+
+## Additional configs
+# Remove RSS icon
+atom_feed:
+  hide: true
+breadcrumbs: true  # disabled by default
+
