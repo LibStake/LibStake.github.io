@@ -44,7 +44,7 @@ jobs:
 
           git add --all
           echo ${GITHUB_ACTOR}
-          git -c user.name="${GITHUB_ACTOR}" -c user.email="${GITHUB_ACTOR}@gmail.com" \
+          git -c user.name="${GITHUB_ACTOR}" -c user.email="libstake@gmail.com" \
             commit --quiet \
             --message "Deploy docs from ${GITHUB_SHA}" \
             --message "$SOURCE_COMMIT"
