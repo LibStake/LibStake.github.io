@@ -25,7 +25,7 @@ jobs:
       - name: Clone target branch
         run: |
           REMOTE_BRANCH="${REMOTE_BRANCH:-gh-pages}"
-          REMOTE_REPO="https://${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git"
+          REMOTE_REPO="https://${GITHUB_ACTOR}:${{ secrets.AUTH_PAT }}@github.com/${GITHUB_REPOSITORY}.git"
 
           echo "Publishing to ${GITHUB_REPOSITORY} on branch ${REMOTE_BRANCH}"
           rm -rf docs/_site/
@@ -35,7 +35,7 @@ jobs:
         run: bundle exec jekyll build --source docs --destination docs/_site --verbose --trace
         env:
           # For jekyll-github-metadata
-          JEKYLL_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          JEKYLL_GITHUB_TOKEN: ${{ secrets.AUTH_PAT }}
       - name: Deploy to GitHub Pages
         run: |
           SOURCE_COMMIT="$(git log -1 --pretty="%an: %B" "$GITHUB_SHA")"
@@ -43,8 +43,7 @@ jobs:
           : > .nojekyll
 
           git add --all
-          echo ${GITHUB_ACTOR}
-          git -c user.name="${GITHUB_ACTOR}" -c user.email="libstake@gmail.com" \
+          git -c user.name="${GITHUB_ACTOR}" -c user.email="${GITHUB_ACTOR}@gmail.com" \
             commit --quiet \
             --message "Deploy docs from ${GITHUB_SHA}" \
             --message "$SOURCE_COMMIT"
