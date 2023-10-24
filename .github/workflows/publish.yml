@@ -32,7 +32,7 @@ jobs:
           git clone --depth=1 --branch="${REMOTE_BRANCH}" --single-branch --no-checkout \
             "${REMOTE_REPO}" docs/_site/
       - name: Build site
-        run: bundle exec jekyll build --source docs --destination docs/_site --verbose --trace
+        run: bundle exec jekyll build --destination docs/_site --verbose --trace
         env:
           # For jekyll-github-metadata
           JEKYLL_GITHUB_TOKEN: ${{ secrets.AUTH_PAT }}
