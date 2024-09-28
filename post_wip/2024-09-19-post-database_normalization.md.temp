@@ -1,0 +1,44 @@
+# 1. 정규화의 의미
+ 
+
+---
+
+# 2. 용어 정리
+
+### 1) 원자값(Atomic Value)
+더이상 나누어질 수 없는 최소 단위의 **단일 값**. 논리적으로 더이상 **분할 되어질 수 없는** 값.
+
+### 2) 결정자(Determinant) & 종속자(Dependent)
+
+    **Table `student`**
+    | student_id  | student_name | birthdate |
+    | ----------- | ------------ | --------- |
+    |           1 | James        | 1994-07-10|
+    |           2 | Michael      | 1998-09-22|
+    |           3 | Tom          | 2000-02-08|
+위 테이블에서 `1994년 7월 10일생`인 `James` 학생의 레코드는 `student_id`=`1`에 의해 결정되어진다. 즉 이경우 결정자는 `student_id` 이고, 종속자는 `student_name`, `birthdate` 이다.
+
+### 3) 함수 종속성(Functional Dependency)
+
+### 4) 이행 종속성(Transitive Dependency)
+
+### 5) 다치 종속성(Mutivalued Dependency)
+
+### 6) 조인 종속성(Join Dependency)
+
+---
+
+# 3. 정규화
+
+## 1) 제 1 정규형 (1NF: First Normal From)
+
+## 2) 제 2 정규형 (2NF: Second Normal Form)
+
+## 3) 제 3 정규형 (3NF: Third Normal Form)
+
+### - BCNF (Boyce-Codd Normal Form)
+
+## 4) 제 4 정규형 (4NF: Forth Normal Form)
+
+## 5) 제 5 정규형 (5NF: Fifth Normal Form)
+
